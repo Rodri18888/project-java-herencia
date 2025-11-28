@@ -1,18 +1,53 @@
-## Getting Started
+# Project java herencia
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Jerarquia
 
-## Folder Structure
+### Explicacion
 
-The workspace contains two folders by default, where:
+                ComponenteVehicular
+            --------------------------
+            - codigo
+            - fabricante
+            + mostrarInformacion()
+                     ▲
+                     │
+    ┌───────────────┬───────────────┬───────────────┬───────────────┬───────────────┐
+    │               │               │               │               │               │
+  Chasis       SistemaFrenos      Neumatico        Motor        Transmision
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+El sistema está organizado mediante herencia.  
+La clase `ComponenteVehicular` funciona como clase base y define los atributos
+y métodos comunes a todos los componentes del vehículo.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Las clases `Chasis`, `SistemaFrenos`, `Neumatico`, `Motor` y `Transmision`
+heredan de `ComponenteVehicular`, reutilizando su código y ampliando
+su funcionalidad según el tipo de componente.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Clase padre
 
-## Dependency Management
+![ComponenteVehicular](screenshots/componentevehicular.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Esta clase es la base de la jerarquía.
+Define los atributos y comportamientos comunes que compartirán todas las subclases.
+No describe un componente específico, sino uno general.
+
+
+### Subclases
+
+![Chasis](screenshots/chasis.png)
+
+![Motor](screenshots/motor.png)
+
+![Neumatico](screenshots/neumatico.png)
+
+![SistemaFrenos](screenshots/sistemafrenos.png)
+
+![Transmision](screenshots/transmision.png)
+
+
+### Clase main (ejecutable)
+
+Al ejecutar el archivo `Main` nos aparecera lo siguiente:
+
+![Main](screenshots/main.png)
+
